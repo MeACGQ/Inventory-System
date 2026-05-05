@@ -52,14 +52,15 @@
     <Compile Include="Assets\Scripts\Player\Inventory\PlayerInventory.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IInteractble.cs" />
+    <Compile Include="Assets\Scripts\Items\Ball.cs" />
     <Compile Include="Assets\Scripts\Items\Sword.cs" />
     <Compile Include="Assets\Scripts\Bases\InteractbleBase.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerFPSCamera.cs" />
     <Compile Include="Assets\Scripts\Environment\Box.cs" />
+    <Compile Include="Assets\Scripts\PlayerInputAction.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\PlayerInv_Ui_Handler.cs" />
     <Compile Include="Assets\Scripts\Bases\ItemBase.cs" />
-    <Compile Include="Assets\PlayerInputAction.cs" />
     <Compile Include="Assets\Scripts\Items\HandGranade.cs" />
     <Compile Include="Assets\Scripts\ScriptbleObjects\ItemData.cs" />
     <Compile Include="Assets\Scripts\Player\Interaction\Player_Interaction.cs" />

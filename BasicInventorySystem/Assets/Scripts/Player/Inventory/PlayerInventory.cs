@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private int[] slotStack = new int[5];
 
     int currentSlot;
+    [SerializeField] GameObject holdReferance;
 
     private void Awake()
     {
@@ -30,6 +32,13 @@ public class PlayerInventory : MonoBehaviour
 
             Inv_Ui_Handler.selectSlot(currentSlot);
         };
+    }
+
+    private void HighlightItem(int slotNumber)
+    {
+        GameObject holdingObject = Instantiate(items[slotNumber].ItemObject, holdReferance.transform.position, Quaternion.identity);
+
+        
     }
 
     public bool AddItemToInv(ItemData itemData)
