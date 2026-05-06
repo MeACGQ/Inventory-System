@@ -23,7 +23,7 @@ I built this project to understand how an inventory system works in Unity and ho
 - Keeping the system modular and reusable
 # Demo
 
-I will add a short gameplay video or GIF here.
+![Demo](BasicInventorySystem/Assets/DemoVideos/BasicInventorySystem-06-05-2026.gif)
 
 # Built With
 - Unity 6
