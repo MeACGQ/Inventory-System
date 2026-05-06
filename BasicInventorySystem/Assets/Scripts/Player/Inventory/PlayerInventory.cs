@@ -38,7 +38,7 @@ public class PlayerInventory : MonoBehaviour
     {
         GameObject holdingObject = Instantiate(items[slotNumber].ItemObject, holdReferance.transform.position, Quaternion.identity);
 
-        
+        holdingObject.GetComponent<Rigidbody>();
     }
 
     public bool AddItemToInv(ItemData itemData)
