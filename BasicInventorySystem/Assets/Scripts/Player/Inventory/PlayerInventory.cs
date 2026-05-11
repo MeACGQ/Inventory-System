@@ -31,14 +31,31 @@ public class PlayerInventory : MonoBehaviour
             currentSlot = int.Parse(ctx.control.name) - 1;
 
             Inv_Ui_Handler.selectSlot(currentSlot);
+
+            HighlightItem(currentSlot);
         };
     }
 
+
+    GameObject holdingObject;
     private void HighlightItem(int slotNumber)
     {
-        GameObject holdingObject = Instantiate(items[slotNumber].ItemObject, holdReferance.transform.position, Quaternion.identity);
+        if (holdingObject != null)
+        {
+            Destroy(holdingObject);
+        }
 
-        holdingObject.GetComponent<Rigidbody>();
+        if (items[slotNumber] != null)
+        {
+            holdingObject = Instantiate(items[slotNumber].ItemObject,
+                holdReferance.transform.position,
+                Quaternion.identity,
+                holdReferance.transform);
+            
+            holdingObject.GetComponent<Rigidbody>().useGravity = false;
+            holdingObject.GetComponent<Collider>().enabled = false;
+        }
+
     }
 
     public bool AddItemToInv(ItemData itemData)
@@ -68,6 +85,8 @@ public class PlayerInventory : MonoBehaviour
 
         Inv_Ui_Handler.SelectItemImage(currentSlot, itemData);
         Inv_Ui_Handler.WriteStackCount(currentSlot, slotStack[currentSlot]);
+
+        HighlightItem(currentSlot);
 
         itemAddSuccesful = true;
 
@@ -109,6 +128,7 @@ public class PlayerInventory : MonoBehaviour
             Inv_Ui_Handler.RemoveItemImage(currentSlot);
         }
 
-            Inv_Ui_Handler.WriteStackCount(currentSlot, slotStack[currentSlot]);
+        Inv_Ui_Handler.WriteStackCount(currentSlot, slotStack[currentSlot]);
+        HighlightItem(currentSlot);
     }
 }
